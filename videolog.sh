@@ -4,6 +4,12 @@ LOGDIR=/var/video
 TIMESTAMP=$(/usr/bin/date +"%Y-%m-%d_%Hu") #YYYY-MM-DD_UUu
 # TODO: Define time to keep files
 
+# Bail if no RTMP
+if [[ ! $STREAMURL =~ ^rtmp.*:// ]]; then
+  echo "We can only record RTMP streams for now. Sorry. Exiting!"
+  exit 1
+fi
+
 # Check for ffmpeg
 if ! hash ffmpeg 2>/dev/null; 
 then
