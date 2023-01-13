@@ -8,7 +8,7 @@ TIMESTAMP=$(/usr/bin/date +"%Y-%m-%d_%Hu") #YYYY-MM-DD_UUu
 if ! hash ffmpeg 2>/dev/null; 
 then
     echo "FFmpeg not found. Installing..."
-    sudo apt-get install -y ffmpeg
+    sudo apt-get install -y ffmpeg >/dev/null 2>&1
 else
     echo "FFmpeg is already installed."
 fi
