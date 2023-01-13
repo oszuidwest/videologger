@@ -14,6 +14,6 @@ else
 fi
 
 # Log for 1h
-ffmpeg -i $STREAMURL -t 3600 -c:v copy -c:a copy $LOGDIR/$TIMESTAMP.mp4
+ffmpeg -hide_banner -loglevel error -i $STREAMURL -t 3600 -c:v copy -c:a copy $LOGDIR/$TIMESTAMP.mp4
 
 # TODO: Validation etc.
