@@ -5,7 +5,7 @@ TIMESTAMP=$(/usr/bin/date +"%Y-%m-%d_%Hu") #YYYY-MM-DD_UUu
 # TODO: Define time to keep files
 
 # Check for ffmpeg
-if ! command -v ffmpeg
+if ! hash ffmpeg 2>/dev/null; 
 then
     echo "FFmpeg not found. Installing..."
     sudo apt-get install -y ffmpeg
